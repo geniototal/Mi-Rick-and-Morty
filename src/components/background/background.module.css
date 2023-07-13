@@ -1,0 +1,23 @@
+.background {    
+
+    position: absolute;
+    background-image: url(./img/bg2.jpg);
+    background-size: cover;
+    top:0;
+    background-repeat: repeat;
+    height: 200vh;
+    width: 100%;
+    z-index: -1;
+    background-attachment: fixed;
+
+}
+@media (max-width: 600px){
+    .background {
+        height: 400%;  
+    }
+}
+@media (min-hight: 100vh){
+    .background {
+        height: 200%;
+    }
+}

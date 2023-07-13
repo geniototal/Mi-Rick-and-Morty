@@ -1,0 +1,93 @@
+.contenedor {
+    background: rgba(0,0,0,.7);
+    max-width: 500px;
+    width: 100%;
+    margin: 48px auto;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    font-family: Roboto;
+    /*padding: 40px;*/
+}
+
+.contenedor .toggle {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    border-top: 2px solid #ff851b;
+    border-bottom: 2px solid #ff851b;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor .toggle:hover {
+    border-top: 2px solid #0075d9;
+    border-bottom: 2px solid #0075d9;
+}
+
+.contenedor .span {
+    letter-spacing: 1px;
+}
+
+.contenedor .h2 {
+    margin: 1em 0 28px 0;
+    padding-top: 1em;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.contenedor .input {
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+}
+
+.contenedor .input:focus {
+    border-bottom: 4px solid #0075d9;
+}
+
+.contenedor .submit{
+    background: #FF851B;
+    color: #FFF;
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor .submit:hover {
+    background: rgba(0, 117, 217, 0.7);
+}
+
+.contenedor .p {
+    background: rgba(0, 117, 217, .7);
+    width: 100%;
+    margin-top: 1em;
+    padding: 0.5em 0;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
