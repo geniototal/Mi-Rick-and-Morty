@@ -24,6 +24,8 @@ function App() {
       if(userData.email === miEmail && userData.password === miPass) {
          setLogin(true)
          navigate("/home")
+      } else {
+         alert(`Usuario o contraseña incorrecta`)
       }
    }
 

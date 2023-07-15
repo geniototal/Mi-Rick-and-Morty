@@ -21,15 +21,15 @@ const Detail = () => {
     : (
     <div className={style.contenedor}>
         <div className={style.container}>
-        <img src={character?.image} alt='' className= {style.img}/> 
-        <h2>{character?.name}</h2>
-        <div>
-            <h2>{character?.species}</h2>
-            <h2>{character?.gender}</h2>
-            <h2>{character?.status}</h2>
-            <h2>{character?.origin?.name}</h2>
+            <img src={character?.image} alt='' className= {style.img}/> 
+            <h2>{character?.name}</h2>
+            <div>
+                <h2>{character?.species}</h2>
+                <h2>{character?.gender}</h2>
+                <h2>{character?.status}</h2>
+                <h2>{character?.origin?.name}</h2>
+            </div>
         </div>
-    </div>
     </div>
     )
 }
