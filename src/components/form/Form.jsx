@@ -64,7 +64,7 @@ const Form = ({handleLogin}) => {
                     name= "email" 
                     value= {userData.email} 
                     onChange= {handleChange}/>
-                <p style={{color: "red"}}>{errors.email}</p>
+                {errors.email && <p style={{color: "red"}}>{errors.email}</p>}
             </div>
             <div>
                 {/* <label htmlFor="password">Password</label> */}
@@ -75,7 +75,7 @@ const Form = ({handleLogin}) => {
                     name="password" 
                     value= {userData.password} 
                     onChange= {handleChange}/>
-                <p style={{color: "red"}}>{errors.password}</p>
+                { errors.password && <p style={{color: "red"}}>{errors.password}</p>}
             </div>
             <button className= {styles.submit}>Submit</button>
         </form>

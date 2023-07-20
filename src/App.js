@@ -6,6 +6,7 @@ import axios from 'axios';
 import Cards from './components/cards/Cards.jsx';
 import Nav from './components/nav/Nav';
 import Form from './components/form/Form.jsx'
+import Favorites from "./components/favorites/Favorites";
 import About from './components/About.jsx';
 import Detail from './components/detail/Detail.jsx';
 import Backgraund from './components/background/Background';
@@ -62,6 +63,7 @@ function App() {
          <Routes>
             <Route path= "/" element= {<Form handleLogin={handleLogin}/>} />
             <Route path= "/home" element= {<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/favorites" element={<Favorites/>}/>
             <Route path= "/about" element={<About />} />
             <Route path= "/detail/:id" element= {<Detail />} />         
          </Routes>

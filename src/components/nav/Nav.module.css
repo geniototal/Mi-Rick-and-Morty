@@ -22,8 +22,8 @@
     background: rgba(0,0,0,.7);
     width: 8vw;
     height: 5vh;
-    margin-right: 1em;
-    border-radius: 0.5em;
+    margin-right: .8em;
+    border-radius: 1em;
     color: white;
     transition: 0.5s
  }
@@ -31,14 +31,14 @@
     background: rgba(244, 239, 239, 0.7);
     width: 8vw;
     height: 5vh;
-    margin-right: 1em;
-    border-radius: 0.5em;
+    margin-right: .8em;
+    border-radius: 1em;
     color: black
  }
- @media (max-width: 600px){
+ @media (max-width: 980px){
    .nav {
       flex-direction: column;
-      height: 16em;
+      height: 23em;
       
    }
    .contButton {
@@ -51,12 +51,12 @@
       margin-top: 0.4em;
       margin-bottom: 0.4em;
       width: 80%;
-      border-radius: 0.2em;
+      border-radius: 0.5em;
    }
    .button:hover{
       margin-top: 0.4em;
       margin-bottom: 0.4em;
       width: 80%;
-      border-radius: 0.2em; 
+      border-radius: 0.5em; 
    }
  }

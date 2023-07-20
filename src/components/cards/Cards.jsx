@@ -1,9 +1,11 @@
+
 import Card from '../card/Card';
 import style from './Cards.module.css';
-export default function Cards({ characters, onClose}) {
+export default function Cards(props) {
+   //const characters = useSelector((state)=> state.characters) // aqui es donde se subscribe el componente a l store
    return (
    <div className={style.container}>
-      {characters.map(
+      {props.characters.map(
          ({ id, name, status, species, gender, origin, image })=> {
          return <Card 
          key = {id}
@@ -14,7 +16,7 @@ export default function Cards({ characters, onClose}) {
          gender={gender}
          origin={origin.name}
          image={image}
-         onClose={onClose}/>
+         onClose={props.onClose}/>
       })}
    </div>);
 }

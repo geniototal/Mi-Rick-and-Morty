@@ -71,3 +71,7 @@
     height: 210px;
     border-radius: 15px;
 }
+.fav {
+    display: flex;
+    justify-content: space-around;
+}
