@@ -40,7 +40,7 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
          isFav ? (
             <button style={{color: "red"}} onClick={handleFavorite}>❤️</button>
          ) : (
-            <button style={{color: "white"}} onClick={handleFavorite}>❤️</button>
+            <button style={{color: "red"}} onClick={handleFavorite}>O</button>
          )
       }
          
