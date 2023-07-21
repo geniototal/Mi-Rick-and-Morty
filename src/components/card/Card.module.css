@@ -13,7 +13,7 @@
     background: rgba(0,0,0,.7);
     font-family: 'Courier New', Courier, monospace;
     width: 15em;
-    height: fit-content; 
+    /* height: fit-content;  */
     height: 30em;
     font-size: 1em;
     /* height: 100%; */
@@ -24,7 +24,7 @@
     box-shadow: 0 10px 6px #000;
     transform-style: preserve-3d;
     /*  */transform: translateZ(-2em) rotateX(8deg);
-    transform: perspective(70em) rotateX(10deg);
+    transform: perspective(60em) rotateX(10deg);
     transition: all 1s ease;
 }
 
@@ -67,11 +67,12 @@
 }
 .img {
     object-fit: cover;
-    width: 230px;
-    height: 210px;
+    width: 14em;
+    height: 12em;
     border-radius: 15px;
 }
-.fav {
+.botones {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    
 }

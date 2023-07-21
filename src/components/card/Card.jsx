@@ -14,7 +14,6 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
 
    useEffect(() => {
       myFavorites.forEach((fav) => {
-        console.log(fav.id, id)
          if (fav.id === id) {
             setIsFav(true);
          }
@@ -35,19 +34,19 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
 
    return (
       <div className={style.container}>
-       <div className={style.fav}>
-         <div>
+       <div className={style.botones}>
+         
          {
          isFav ? (
             <button style={{color: "red"}} onClick={handleFavorite}>❤️</button>
          ) : (
-            <button style={{color: "red"}} onClick={handleFavorite}>F</button>
+            <button style={{color: "white"}} onClick={handleFavorite}>❤️</button>
          )
       }
-         </div>
-         <div>
+         
+         
          {onClose &&<button style={{color: "red"}} onClick={ handleClose} >X</button>}
-         </div>
+         
        </div>
        
        <Link to={`/detail/${id}`}><h2 className={style.titleName}>{name}</h2></Link>

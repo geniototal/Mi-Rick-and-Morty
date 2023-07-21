@@ -1,11 +1,11 @@
 .background {    
-
+    min-height: 100vh;
     position: absolute;
     background-image: url(./img/bg2.jpg);
-    background-size: cover;
+    background-size:cover;
     top:0;
-    background-repeat: repeat;
-    height: 200vh;
+    background-repeat: space;
+    height: 1800vh;
     width: 100%;
     z-index: -1;
     background-attachment: fixed;
