@@ -50,11 +50,14 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
        </div>
        
        <Link to={`/detail/${id}`}><h2 className={style.titleName}>{name}</h2></Link>
-         <h2 className= {style.h2}>{status}</h2>
+         <h2 className= {style.h3}>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
          <h2>{origin}</h2>
-         <img className= {style.img} src={image} alt='' />
+         <div className= {style.content__img}>
+            <img className= {style.img} src={image} alt='' />
+         </div>
+         
       </div>
    );
 }

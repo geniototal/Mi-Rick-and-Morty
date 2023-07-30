@@ -7,7 +7,7 @@
     background-repeat: space;
     height: 1800vh;
     width: 100%;
-    z-index: -1;
+    z-index: -3;
     background-attachment: fixed;
 
 }

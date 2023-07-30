@@ -1,27 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 import SearchBar from "../searchBar/SearchBar";
-import style from './Nav.module.css'
-import { useNavigate } from 'react-router-dom'
+//import style from './Nav.module.css';
+import { useNavigate } from 'react-router-dom';
+import {NavContainer, BurgerContainer, BgDiv,} from './navStyled';
+import Burger from "./Burger";
 
 const Nav = (props) => {
     const navigate = useNavigate()
-    
-        return <nav className={style.nav}>
+    const [clicked, setClicked] =useState(false)
+    const handleClick = () => {
+        setClicked(!clicked);
+        
+    }
+    return <>
             
-            <div>
-                <h1 style={{color: "white"}}>Rick and Morty</h1>
-            </div>
-            <SearchBar onSearch={props.onSearch} />
-            <div className= {style.contButton}>
-                <button className= {style.button} onClick={() => props.onSearch(Math.ceil(Math.random() * 285) + 1)}>Random</button>
-                <button className= {style.button} onClick={() => navigate("/home")}>HOME</button>
-                <button className= {style.button} onClick={() => navigate("/about")}>About</button>
-                <button className= {style.button} onClick={() =>navigate("/favorites")}>Favorites</button>
-                <button className= {style.button} onClick={() => navigate(-1)}>Atras</button>
-                <button className= {style.button} onClick={() => props.logOut()}>LogOut</button>
-            </div>
-        </nav>
+            <NavContainer>
+                <h1 className="h1">Rick and Morty</h1>
+                
+                <div className={`links ${clicked ? 'active' : ''}`}>
+                    
+                    <h3 className="button" onClick={() => navigate("/home")}>Home</h3>
+                    <h3 className="button" onClick={() => navigate("/about") }>About</h3>
+                    <h3 className="button" onClick={() => navigate("/favorites")}>Favorites</h3>
+                    <h3 className="button" onClick={() => navigate(-1)}>Atras</h3>
+                    <h3 className="button" onClick={() => props.logOut()}>LogOut</h3>
+                </div>
+                <div className="contain_button">
+                    <SearchBar onSearch={props.onSearch} />
+                    <button className="random" onClick={() => props.onSearch(Math.ceil(Math.random() * 285) + 1)}>Random</button>
+                </div>
+                <BurgerContainer>
+                    <Burger clicked= {clicked} handleClick= {handleClick}/>
+                </BurgerContainer>
+                <BgDiv className={`initial ${clicked ? 'active' : ''}`}></BgDiv>
+            </NavContainer>
+        </>
     }
 
 
 export default Nav;
+

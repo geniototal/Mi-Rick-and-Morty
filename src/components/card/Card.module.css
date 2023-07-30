@@ -4,6 +4,7 @@
 } */
 
 .container {
+    /* z-index: -2; */
     border: ridge #0075d9 5px;
     border-radius: 2em;
     display: flex;
@@ -12,12 +13,12 @@
     /* background-color: yellow; */
     background: rgba(0,0,0,.7);
     font-family: 'Courier New', Courier, monospace;
-    width: 15em;
+    width: 16em;
     /* height: fit-content;  */
     height: 30em;
     font-size: 1em;
     /* height: 100%; */
-    margin: 1em;
+    margin: 3rem 1em 0em 1em;
     padding: 0.5em;
     color: rgb(216, 213, 216);
     /* box-shadow: 0 0 10px rgba(86, 82, 82, 0.8); */
@@ -26,6 +27,7 @@
     /*  */transform: translateZ(-2em) rotateX(8deg);
     transform: perspective(60em) rotateX(10deg);
     transition: all 1s ease;
+    
 }
 
 .container:hover {
@@ -35,6 +37,23 @@
 .container img {
     border-radius: 5px;
     margin-top: 0.2em;
+    
+}
+.content__img {
+    width: 14em;
+    height: 12em;
+    
+    border-radius: 15px;
+    /* object-fit: cover;
+    object-position: center; */
+    position: relative;
+    
+    overflow: hidden;
+    transition: transform .4s;
+}
+.content__img:hover img {
+    
+    transform: scale(1.2);
 }
 .container button {
     border-radius: 0.5em;
@@ -63,16 +82,22 @@
 .titleName{
         /* font-family: rick_and_morty_title; */
         padding: 1em;
-        color: #137fdd;
+        color: #6eb4f0;
+}
+.titleName:hover {
+    color:#00ff40 ;
 }
 .img {
-    object-fit: cover;
+    /* object-fit: cover;
     width: 14em;
     height: 12em;
-    border-radius: 15px;
+    border-radius: 1; */
+    margin: 0 .2rem 0 .2rem;
 }
 .botones {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     
 }

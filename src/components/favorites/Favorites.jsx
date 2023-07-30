@@ -20,20 +20,23 @@ function Favorites () {
         dispatch(filterCards(e.target.value))
     }
     return (
-        <div>
+        <div className={style.content}>
+            
             <div className={style.container}>
-            <select className= {style.select} name="" id="" onChange = { handleOrder }>
-                <option className= {style.option} value="A">Ascendente</option>
-                <option className= {style.option} value="D">Descendente</option>
-            </select>
-            <select className= {style.select} name="" id="" onChange = { handleFilter }>
-                <option className= {style.option} value="Male">Male</option>
-                <option className= {style.option} value="Female">Female</option>
-                <option className= {style.option} value="Genderless">Genderless</option>
-                <option className= {style.option} value="unknown">unknown</option>
-            </select>
+                <h3 className = {style.h3}>Favoritos</h3>
+                <div className= {style.container_select}>
+                    <select className= {style.select} name="" id="" onChange = { handleOrder }>
+                        <option className= {style.option} value="A">Ascendente</option>
+                        <option className= {style.option} value="D">Descendente</option>
+                    </select>
+                    <select className= {style.select} name="" id="" onChange = { handleFilter }>
+                        <option className= {style.option} value="Male">Male</option>
+                        <option className= {style.option} value="Female">Female</option>
+                        <option className= {style.option} value="Genderless">Genderless</option>
+                        <option className= {style.option} value="unknown">unknown</option>
+                    </select>
+                </div>
             </div>
-            <h1>Favoritos</h1>
             <Cards characters={favorito}/>
             
         </div>
