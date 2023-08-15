@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const NavContainer = styled.nav`
     .h1 {
         color: white;
-        font-size: 3vw;
+        font-size: 1.5vw;
     }
     
     position: fixed; 
@@ -14,90 +14,98 @@ export const NavContainer = styled.nav`
     align-items: center;
     background: rgba(0,0,0, .7);
     box-shadow: 0 10px 4px #000;
-    margin-top: 1rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin: 1rem 5vw;
     padding: 0 1rem;
     height: 4em;
     width: 90vw;
     border-radius: 2rem;
     
-   
     .links {
-        
-        
-        position: absolute;
-        top: -700px;
-        left: -2000px;
-        right: 0;
-       
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        display: block;
-        transition: all .5s ease;
-    }
-    @media(min-width: 768px) {
+        display: flex;
+        justify-content: space-around;
+        column-gap: 1rem;
+        align-items: center;
+        height: 4rem;
+        }
+   
+    @media(max-width: 768px) {
         .h1 {
-            font-size: 1.5vw;
+            font-size: 3vw;
         }
         .links {
-                position: initial;
-                display: flex;
-                column-gap: 1rem;
-                align-items: center;
-                height: 4rem;
-            }
+            position: fixed;
+            top:15vh;
+            right: 0;
+            width: 20%;
+            padding-top: 2rem;
+            padding-bottom: 1.5rem;
+            height: 45vh;
+            background-color: rgba(0,0,0, .7);
+            box-shadow: 10px 10px 4px #000;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap:2rem;
+            transform: translateX(100%);
+            transition: all .5s ease;
         }
+    }
     .links.active {
-        width: 20%;
-        display: block;
-        position: absolute;
-        margin-left: .5rem;
-        /* margin-right: auto; */
-        top: 8em;
-        left: -2.5em;
-        right: 0;
-        text-align: center;
-        
+        transform: translateX(0%);
     }
     
-    
     .button {  
-        /* text-align: center; */
+        text-align: center;
         font-family: var(--second-font);
+        position: relative;
         height: 100%;
         padding: 1.3rem 0rem;
         margin-right: .8em;
         color: var(--title-color);
         cursor: pointer;
         transition: 0.5s;
-    /* &:after {
+    &:after {
         content: '';
-        width: 2%;
-        height: 2px;
-        color: black;
+        width: 0%;
+        height: 3px;
         background-color: var(--title-color);
-        position: initial;
-        left: 260px;
-        bottom: 630px;
+        position: absolute;
+        left: 0;
+        bottom: 1rem;
         transition: width .4s;
     }
-   &:hover::after {
-    
-    width: 5%;
-  }   */
+    &:hover::after {
+        width: 70%;
+    }   
     &:hover {
-        /* background: rgba(244, 239, 239, 0.7);
-        width: 8vw;
-        height: 5vh; 
-        margin-right: .8em;
-        border-radius: 1em; */
         font-weight: 600;
-        color: #00ff40
+        /* color: #00ff40 */
     }
-} 
     
+    
+} 
+.activo {
+    font-family: var(--second-font);
+    height: 100%;
+    position: relative;
+    padding: 1.3rem 0rem;
+    margin-right: .8em;
+    font-weight: 600;
+    color: #00ff40;
+    /* &:after{
+        content: '';
+        width: 0%;
+        height: 3px;
+        background-color: #00ff40;
+        position: absolute;
+        left: 0;
+        bottom: 1rem;
+        transition: width .4s;
+    }    
+    &:hover::after {
+    width: 70%;
+  }     */  
+}  
     .random {
         position:relative;
         border-radius: 0.5em;
@@ -126,14 +134,15 @@ export const NavContainer = styled.nav`
 
 `
 export const BurgerContainer = styled.div `
-    
-    @media(min-width: 768px) {
-            display: none;
-            color: blue
+    cursor: pointer;
+    display: none;
+    @media(max-width: 768px) {
+        display: block;
+            
     }  
 `
 export const BgDiv = styled.div `
-    position: absolute;
+    /* position: absolute;
     background-color: rgba(0,0,0, .7);
     top: -900px;
     left: -1000px;
@@ -147,6 +156,6 @@ export const BgDiv = styled.div `
         width: 120px;
         height: 400px;
         z-index: -1;
-    }
+    } */
 `
  

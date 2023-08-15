@@ -11,7 +11,7 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
    const dispatch = useDispatch();/// esto va permite a los componentes funcionales hacer dispatch
    
    const myFavorites = useSelector(state => state.myFavorites) // trae el estado global al componente
-
+console.log("a ver " + myFavorites);
    useEffect(() => {
       myFavorites.forEach((fav) => {
          if (fav.id === id) {
@@ -23,8 +23,9 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
    const handleFavorite = () => {
       console.log(isFav);
       dispatch(isFav ? removeFav(id) : addFav({
-         id, status, species, gender, origin, image
+         id, name, status, species, gender, origin, image
       })) // hacemos un dispatch aca
+      console.log("pasa por aca?" + name);
       setIsFav(!isFav)
     }
    const handleClose = () => {
