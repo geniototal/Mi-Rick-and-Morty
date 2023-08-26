@@ -37,9 +37,9 @@ export const NavContainer = styled.nav`
             top:15vh;
             right: 0;
             width: 20%;
-            padding-top: 2rem;
+            padding-top: 3rem;
             padding-bottom: 1.5rem;
-            height: 45vh;
+            height: 65vh;
             background-color: rgba(0,0,0, .7);
             box-shadow: 10px 10px 4px #000;
             border-radius: 1rem;
@@ -58,8 +58,9 @@ export const NavContainer = styled.nav`
         text-align: center;
         font-family: var(--second-font);
         position: relative;
-        height: 100%;
-        padding: 1.3rem 0rem;
+        /* height: 100%; */
+        //padding: 1.3rem 0rem;
+        padding-left: .3rem;
         margin-right: .8em;
         color: var(--title-color);
         cursor: pointer;
@@ -71,7 +72,7 @@ export const NavContainer = styled.nav`
         background-color: var(--title-color);
         position: absolute;
         left: 0;
-        bottom: 1rem;
+        bottom: -.3rem;
         transition: width .4s;
     }
     &:hover::after {

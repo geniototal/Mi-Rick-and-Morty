@@ -10,7 +10,6 @@ export const FILTERANDORDER = "FILTER_AND_ORDER"
     const endpoint = 'http://localhost:3001/rickandmorty/fav';
     return (dispatch) => {
        axios.post(endpoint, character).then( ({data} ) => {
-         console.log(data.name + " que carajo es data");
          return dispatch({
              type: ADD_FAV,
              payload: data,

@@ -8,7 +8,7 @@ const save = (newFav) => {
 }
 
 let deleteById = (id) => {
-    db = db.filter(char => char.id !== id)
+    db = db.filter(char => char.id !== Number(id))
 
     return db
 }

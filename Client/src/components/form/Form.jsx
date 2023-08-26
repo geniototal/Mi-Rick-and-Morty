@@ -30,6 +30,10 @@ const Form = ({handleLogin}) => {
         email: "",
         password: ""
     })
+    const [clicked, setClicked] =useState(false)
+    const handleClickDisplay = () => {
+        setClicked(!clicked); 
+    }  
     const handleChange = (event) => {
         const property = event.target.name;
         const valor = event.target.value;
@@ -45,16 +49,16 @@ const Form = ({handleLogin}) => {
 
             handleLogin(userData)
         }
-        
     }
+    
     return (
         <div className= {styles.contenedor}>
         <div className= {styles.toggle}>
-            <span className= {styles.span}> Crear Cuenta</span>
+            <span className= {styles.span} onClick = {handleClickDisplay} >{clicked ? "Iniciar Sesión" : "Crear Cuenta" }</span>
         </div>
-        <div className={styles.formulario}>
+        <div className={`${clicked ? styles.formulario_2 : styles.formulario_1 }`}>
             <h2 className= {styles.h2}>Iniciar Sesión</h2>
-        <form onSubmit = {handleSubmit} autocomplete="off">
+        <form onSubmit = {handleSubmit} /* autocomplete="off" */>
             <div>
                 {/* <label htmlFor="email">Email</label> */}
                 <input
@@ -77,13 +81,37 @@ const Form = ({handleLogin}) => {
                     onChange= {handleChange}/>
                 { errors.password && <p style={{color: "red"}}>{errors.password}</p>}
             </div>
-            <button className= {styles.submit}>Submit</button>
+            <button className= {styles.submit}>Iniciar Sesión</button>
         </form>
         </div>
+        
+        <div className={`${clicked ? styles.formulario_1 : styles.formulario_2 }`}>
+            <h2 className= {styles.h2}>Crea tu Cuenta</h2>
+            <form action="#">
+                <input 
+                className= {styles.input}
+                type="text" placeholder="Usuario" required/>
+                
+                <input 
+                className= {styles.input}
+                type="password" placeholder="Contraseña" required/>
+                
+                <input 
+                className= {styles.input}
+                type="email" placeholder="Correo Electronico" required/>
+                
+                <input 
+                className= {styles.input}
+                type="text" placeholder="Teléfono" required/>
+                
+                <button className= {styles.submit}>Registrarse</button>
+            </form>
+        </div>
+
         <div className={styles.p}>
             <p>Olvide mi Contraseña?</p>
         </div>
-        </div>
+    </div>
     )
 }
 export default Form;

@@ -8,10 +8,9 @@ import { addFav,removeFav } from '../../redux/actions';
 function Card({id, name, status, species, gender, origin, image, onClose}) {
    
    const [isFav, setIsFav] = useState(false)
-   const dispatch = useDispatch();/// esto va permite a los componentes funcionales hacer dispatch
+   const dispatch = useDispatch();// esto va permite a los componentes funcionales hacer dispatch
    
    const myFavorites = useSelector(state => state.myFavorites) // trae el estado global al componente
-console.log("a ver " + myFavorites);
    useEffect(() => {
       myFavorites.forEach((fav) => {
          if (fav.id === id) {
@@ -24,8 +23,7 @@ console.log("a ver " + myFavorites);
       console.log(isFav);
       dispatch(isFav ? removeFav(id) : addFav({
          id, name, status, species, gender, origin, image
-      })) // hacemos un dispatch aca
-      console.log("pasa por aca?" + name);
+      })); // hacemos un dispatch aca
       setIsFav(!isFav)
     }
    const handleClose = () => {
@@ -41,7 +39,7 @@ console.log("a ver " + myFavorites);
          isFav ? (
             <button style={{color: "red"}} onClick={handleFavorite}>❤️</button>
          ) : (
-            <button style={{color: "red"}} onClick={handleFavorite}>O</button>
+            <button  onClick={handleFavorite}>❤️</button>
          )
       }
          

@@ -20,18 +20,31 @@ const Detail = () => {
     }, [id])
     return !character.image ? <h1 className={style.h1}>Cargando su personaje...</h1>
     : (
-    <div className={style.contenedor}>
-        <div className={style.container}>
-            <img src={character?.image} alt='' className= {style.img}/> 
-            <h2>{character?.name}</h2>
-            <div>
-                <h2>{character?.species}</h2>
-                <h2>{character?.gender}</h2>
-                <h2>{character?.status}</h2>
-                <h2>{character?.origin?.name}</h2>
+        
+        
+        <div className={style.container}>    
+            <div className={style.contenedor}>
+                <div className={style.img}>
+                    <img src={character?.image} alt='' className= {style.img}/>     
+                </div>
+                <div className={style.contenedor_texto}>
+                    <div className={style.titleName}>{character?.name}</div>
+                    <h2><u>Especie</u>: {character?.species}</h2>
+                    <h2><u>Gender</u>: {character?.gender}</h2>
+                    <h2><u>Status</u>: {character?.status}</h2>
+                    <h2><u>Origin</u>: {character?.origin.name}</h2>
+                    <h2><u>Location</u>: {character?.location.name}</h2>
+                </div>
             </div>
+            <div>
+                <h2><u>Created</u>: {character?.created}</h2>
+                <h2><u>Episodios en los que aparece</u>:</h2>
+                <h2>{character?.episode.map(char => char.split("/")[5] + ', ')}</h2>
+            </div>
+                
+            
         </div>
-    </div>
+    
     )
 }
 export default Detail;

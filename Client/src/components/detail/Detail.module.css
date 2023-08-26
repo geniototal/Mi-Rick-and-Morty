@@ -4,26 +4,28 @@
     margin-top: 6rem;
     text-align: center;
 }
+
 .contenedor {
     display: flex;
     justify-content: center;
 }
+
 .container {
     border: ridge #0075d9 5px;
     border-radius: 2em;
     display: flex;
     flex-direction: column;
+    text-align: start;
     align-items: center;
-    /* background-color: yellow; */
-    background: rgba(0,0,0,.7);
-    font-family: 'Courier New', Courier, monospace;
-    width: 15em;
+    background: rgba(0,0,10,.8);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 30em;
     height: fit-content; 
     height: 30em;
     font-size: 1em;
     /* height: 100%; */
-    margin: 7rem 1rem;
-    padding: 0.5em;
+    margin: 7rem auto;
+    padding: 1rem;
     color: rgb(216, 213, 216);
     /* box-shadow: 0 0 10px rgba(86, 82, 82, 0.8); */
     box-shadow: 0 10px 6px #000;
@@ -36,20 +38,30 @@
     box-shadow: 0 2px 4px #000;
     transform: rotate(0);
 }
+.contenedor_texto {
+    
+    margin-left: 2.3rem;
+    
+}
 .container h2 {
     
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin: 0.2em;
+    padding-bottom: .5rem;
+    font-weight: lighter;
 }
 
 .titleName{
         /* font-family: rick_and_morty_title; */
-        padding: 1em;
+        text-align: center;
+        margin-bottom: 1rem;
         color: #137fdd;
+        font-size: 2rem;
+        font-weight: bold;
 }
 .img {
     object-fit: cover;
     width: 230px;
     height: 210px;
-    border-radius: 15px;
+    border-radius: 50%;
 }

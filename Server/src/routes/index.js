@@ -6,11 +6,31 @@ const login = require('../controllers/login');
 
 routes.get('/character/:id', async(req, res) => {
     const {id} = req.params;
-    await getCharById(id, res);
+    try {
+        let character = await getCharById(id)
+        
+        if(character?.name) {
+            res.status(200).json(character)
+        } else {
+            res.status(404).json({"error": "No se encontro un personaje con ese id"})
+        }
+    } catch {
+        res.status(500).json({"error": "Fallo de coneccion con la api"})
+    }
 });
 routes.get('/login', (req, res) => {
     const {email, password} = req.query;
-    login(email, password, res);
+    if(!email || !password) {
+        res.status(400).json({"Error": "Faltan datos"})
+        return
+    }
+    
+    const user = login(email, password);
+    if(user) {
+        res.status(200).json({access: `true`});
+    } else {
+        res.status(200).json({access: `false`});
+    }
 });
 routes.post('/fav', (req, res) => {
     
