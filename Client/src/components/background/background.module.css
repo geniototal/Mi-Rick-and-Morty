@@ -1,7 +1,7 @@
 .background {    
     min-height: 100vh;
     position: absolute;
-    background-image: url(./img/fondo_rick.png);
+    background-image: url(./img/rickandmorty.jpg);
     background-size:cover;
     top:0;
     background-repeat: space;

@@ -1,12 +1,12 @@
 import style from './Card.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 //import {connect} from "react-redux"
 import { addFav,removeFav } from '../../redux/actions';
 
 function Card({id, name, status, species, gender, origin, image, onClose}) {
-   
+   const { pathname } = useLocation()
    const [isFav, setIsFav] = useState(false)
    const dispatch = useDispatch();// esto va permite a los componentes funcionales hacer dispatch
    
@@ -17,7 +17,7 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
             setIsFav(true);
          }
       });
-   }, [myFavorites, id]);
+   }, [myFavorites]);
 
    const handleFavorite = () => {
       console.log(isFav);
@@ -42,9 +42,9 @@ function Card({id, name, status, species, gender, origin, image, onClose}) {
             <button  onClick={handleFavorite}>❤️</button>
          )
       }
+         {/* {onClose &&<button style={{color: "red"}} onClick={ handleClose} >X</button>} */}
          
-         
-         {onClose &&<button style={{color: "red"}} onClick={ handleClose} >X</button>}
+         {pathname === '/home' && <button style={{color: "red"}} onClick={() => onClose(id)}>X</button>}
          
        </div>
        

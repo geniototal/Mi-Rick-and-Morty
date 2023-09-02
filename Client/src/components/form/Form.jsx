@@ -64,7 +64,7 @@ const Form = ({handleLogin}) => {
                 <input
                     className= {styles.input} 
                     type="text"
-                    placeholder="Usuario" required 
+                    placeholder="Email" required 
                     name= "email" 
                     value= {userData.email} 
                     onChange= {handleChange}/>
@@ -90,7 +90,7 @@ const Form = ({handleLogin}) => {
             <form action="#">
                 <input 
                 className= {styles.input}
-                type="text" placeholder="Usuario" required/>
+                type="text" placeholder="Nombre Usuario" required/>
                 
                 <input 
                 className= {styles.input}

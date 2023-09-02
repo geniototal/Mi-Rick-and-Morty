@@ -1,9 +1,15 @@
-const users = require('../utils/users')
+const{ User } = require("../DB_connection");
 
-const login = (email, password) => {
+const login = async ({email, password}) => {
     
-    const user = users.find(user => user.email === email && user.password === password);
-    return user
+        const user = await User.findOne({
+            where: {
+                email: email, // se puede poner solo email
+                password: password
+            }
+        });
+        return user
+    
 }
 
 module.exports = login;

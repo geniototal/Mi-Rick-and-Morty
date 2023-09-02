@@ -12,7 +12,7 @@ function Favorites () {
         filter: "",
     })
     const favorito = useSelector((state)=> state.myFavorites)
-    console.log(favorito)
+    //console.log(favorito)
     //const [ aux, setAux ] = useState(false);
     const dispatch = useDispatch();
     

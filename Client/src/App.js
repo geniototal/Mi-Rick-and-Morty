@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes, Route, useLocation, useNavigate} from 'react-router-dom'
+import {Routes, Route, useLocation, useNavigate, isRouteErrorResponse} from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 //!Importando componentes
@@ -18,15 +18,30 @@ function App() {
    let location = useLocation()
    let navigate = useNavigate()
 
-   function handleLogin(userData) {
+   const handleLogin = async(userData) =>  {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-         const { access } = data;
-         setLogin(access);
-         login && navigate('/home');
+      try {
+         const response= await axios(URL + `?email=${email}&password=${password}`)
+         const { access } = response.data;
          
-      });
+         setLogin(access);
+         //console.log(access);
+         login && navigate('/home');
+         /* if (login !== false) {
+            
+            navigate('/home')
+            
+         }else {
+            alert("email o contraseña incorrecta")
+            
+         } */
+      } catch (error) {
+         return console.log({error: error.message})
+      }
+         //login && navigate('/home');
+         
+   
    }
    /* const handleLogin = (userData) => {
       const miEmail = "hola@gmail.com"
@@ -43,8 +58,8 @@ function App() {
    const logOut = () => {
       setLogin(false)
    }
-
    useEffect(() => {
+      //console.log(login)
       !login && navigate("/")
    }, [login])
 

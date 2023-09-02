@@ -3,7 +3,7 @@ const server = express();
 const routes = require('./routes/index');
 const cors = require('cors')
 
-const PORT = 3001;
+
 server.use(cors())
 server.use(express.json());
 
@@ -22,10 +22,9 @@ server.use((req, res, next) => {
  });
 
  server.use('/rickandmorty', routes)
+module.exports = server;
 
-server.listen(PORT, () => {
-   console.log('Server raised in port: ' + PORT);
-});
+
 
 /* const http = require("http");
 //const data = require("./utils/data")
